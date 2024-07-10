@@ -13,6 +13,7 @@ from io import BytesIO
 import base64
 
 app = dash.Dash(__name__)
+server = app.server  # Add this line
 
 text1="""
 	Rice is favorable and high consumed cereal grain in Asian countries. It can be easily found all over the world. Many value added products are produced by using rice for human beings . In the rice market, key determinant of milled rice is quality. The quality measurement becomes more important with the import and export trade. Rice samples contain different dispensable objects like paddy, chaff, damaged grains, weed seeds, stones etc. Rice quality is varying according to these impurity content. 
