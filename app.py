@@ -1,6 +1,6 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
 import plotly.graph_objects as go
 from plotly import subplots
 import plotly.express as px
@@ -13,7 +13,6 @@ from io import BytesIO
 import base64
 
 app = dash.Dash(__name__)
-server = app.server  # Add this line
 
 text1="""
 	Rice is favorable and high consumed cereal grain in Asian countries. It can be easily found all over the world. Many value added products are produced by using rice for human beings . In the rice market, key determinant of milled rice is quality. The quality measurement becomes more important with the import and export trade. Rice samples contain different dispensable objects like paddy, chaff, damaged grains, weed seeds, stones etc. Rice quality is varying according to these impurity content. 
@@ -72,7 +71,7 @@ dilation = cv2.dilate(erosion,kernel2,iterations = 1)
 edges = cv2.Canny(dilation,100,200)
 
 ### Size detection
-_, contours, hierarchy = cv2.findContours(erosion, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+contours, hierarchy = cv2.findContours(erosion, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 #print("No. of rice grains=",len(contours))
 total_ar=0
 for cnt in contours:
